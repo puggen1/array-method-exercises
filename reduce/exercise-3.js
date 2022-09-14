@@ -39,6 +39,14 @@ const teams = [
   },
 ];
 
-const winningTeams = null; // Replace null and add .reduce code here
+const winningTeams = teams.reduce((firstVal, {name, score, isWinner}, theIndex) => {
+    if(isWinner){
+      firstVal[`${name.toLowerCase()}`] = score;
+    }
+    else{
+      firstVal[`${name.toLowerCase}`] = "";
+    }
+    return firstVal
+},{}); // Replace null and add .reduce code here
 
 console.log(winningTeams);

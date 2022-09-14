@@ -36,6 +36,6 @@ const items = [
   },
 ];
 
-const totalCostOfItems = null; // Replace null and add .reduce code here
+const totalCostOfItems = items.reduce((firstVal, {itemsInStock, price} = items) => firstVal += itemsInStock * price, 0  ); // Replace null and add .reduce code here
 
 console.log(totalCostOfItems);
